@@ -1,0 +1,44 @@
+@import '_base.scss';
+@import '_buttons.scss';
+
+
+* {
+  box-sizing: border-box;
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+}
+
+body {
+  color: $txt-color-light;
+}
+
+#app {
+  color: #2c3e50;
+  font-family: Avenir, Helvetica, Arial, sans-serif;
+  // margin-top: 60px;
+  min-height: 100vh;
+  text-align: center;
+ 
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
+    margin: 0px auto;
+    width: 100vw;
+  
+    // @include tablet {
+    //   width: 90%;
+    // }
+}
+
+.card-title {
+  margin: 20px auto;
+  text-transform: uppercase;
+}

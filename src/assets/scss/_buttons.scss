@@ -1,0 +1,31 @@
+@import "./_base.scss";
+
+.btn {
+  height: 30px;
+  width: max-content;
+  margin: 0 auto;
+  padding: 0 15px;
+  text-align: center;
+  text-transform: capitalize;
+  transition: $transition-quick;
+
+  &:hover {
+    cursor: pointer;
+  }
+
+  &--send {
+    background-color: $bg-color-form;
+    border: 2px solid;
+    border-radius: $border-radius-very-small;
+    color: $txt-color-light;
+    font-weight: 600;
+    text-transform: uppercase;
+    width: 100px;
+
+    &:hover {
+      background-color: $txt-color-light;
+      color: $bg-color-form;
+      text-decoration: underline;
+    }
+  }
+}

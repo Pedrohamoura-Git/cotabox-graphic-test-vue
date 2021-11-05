@@ -1,0 +1,43 @@
+@import '../../assets/scss/index.scss';
+
+.table {
+  border: 1px solid;
+  color: $txt-color-table;
+  font-size: 0.9rem;
+  width: min(95%, 500px);
+  margin: 0 auto;
+  padding: 10px;
+  text-transform: capitalize;
+
+  &,
+  &-head__txt,
+  td {
+    border: 1px solid;
+    border-collapse: collapse;
+    padding: 5px;
+  }
+
+  &-head__txt {
+    padding: 5px;
+    text-align: left;
+
+    &--participation {
+      text-align: center;
+    }
+  }
+
+  &-data {
+    padding: 2px 5px;
+
+    &--name,
+    &--last-name {
+      padding: 0 5px;
+      text-align: left;
+    }
+
+    &--cont,
+    &--participation {
+      text-align: center;
+    }
+  }
+}

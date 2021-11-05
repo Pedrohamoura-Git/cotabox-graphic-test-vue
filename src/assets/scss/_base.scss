@@ -1,0 +1,19 @@
+$bg-color-form: #00B8E2;
+$border-radius-very-small: 3px;
+$border-radius-small: 7px;
+$transition-quick: .3s;
+$txt-color-light: #ffffff;
+$txt-color-table: #7b7979;
+
+
+@mixin tablet {
+  @media only screen and (min-width: 568px) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media only screen and (min-width: 1080px) {
+    @content;
+  }
+}

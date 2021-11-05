@@ -1,0 +1,33 @@
+@import '../../assets/scss/index.scss';
+
+.new-member-form {
+  background-color: $bg-color-form;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    // height: 150px;
+    margin-bottom: 30px;
+    padding: 20px 0 30px;
+
+  @include tablet {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 120px;
+    margin: 0 auto 50px;
+    // margin-bottom: 50px;
+  }
+}
+
+.first-name-input, .last-name-input, .participation-input {
+  border: 0px;
+  border-radius: 5px;
+  height: 40px;
+  margin: 5px;
+  padding: 10px;
+  max-width: 250px;
+}
+
+.btn--send {
+  height: 40px;
+  margin: 5px;
+}

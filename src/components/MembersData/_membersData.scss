@@ -1,0 +1,11 @@
+@import '../../assets/scss/index.scss';
+
+.members-data {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+
+  &__about {
+    margin-bottom: 40px;
+  }
+}
