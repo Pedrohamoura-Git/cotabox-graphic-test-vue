@@ -71,13 +71,13 @@ Your users should be able to:
 ### Continued development
 
 ...
+## Useful resources
 
-### Useful resources
-
-<!-- - <a href="https://github.com/kapoko/delicious-hamburgers" alt="Delicious Hamburgers" target="_blank">Delicious Hamburgers</a> -->
+- <a href="https://apexcharts.com/docs/vue-charts/" alt="Apex Charts - Vue Charts" target="_blank">Apex Charts - Vue Charts</a>
 ...
 
 ## Author
+<em>Pedro Henrique Alves Moura</em>,
 
 - My Portfolio - [portfolio](https://pedro-meuportfolio.netlify.app)
 - Instagram - [@ph_pedrohenrique21](https://www.instagram.com/ph_pedrohenrique21/)
