@@ -3,14 +3,14 @@
 const membersList = {
   namespaced: true,
   state: {
-    // membersList: [],
-    membersList: [
-      { name: 'Carlos', lastName: 'Moura', participation: 5 },
-      // { name: 'Fernanda', lastName: 'Oliveira', participation: 15 },
-      { name: 'Hugo', lastName: 'Silva', participation: 20 },
-      { name: 'Eliza', lastName: 'Souza', participation: 20 },
-      { name: 'Anderson', lastName: 'Santos', participation: 40 },
-    ],
+    membersList: [],
+    // membersList: [
+    //   { name: 'Carlos', lastName: 'Moura', participation: 5 },
+    //   // { name: 'Fernanda', lastName: 'Oliveira', participation: 15 },
+    //   { name: 'Hugo', lastName: 'Silva', participation: 20 },
+    //   { name: 'Eliza', lastName: 'Souza', participation: 20 },
+    //   { name: 'Anderson', lastName: 'Santos', participation: 40 },
+    // ],
     availableParticipation: 0,
   },
   mutations: {
@@ -22,8 +22,9 @@ const membersList = {
     },
   },
   actions: {
-    SET_NEW_MEMBER({ commit }, member) {
+    SET_NEW_MEMBER({ commit, state }, member) {
       commit('SET_NEW_MEMBER', member)
+      console.log('actions - set new member - membersList', state.membersList)
     },
     SET_AVAILABLE_PARTICIPATION({ commit }, value) {
       commit('SET_AVAILABLE_PARTICIPATION', value)

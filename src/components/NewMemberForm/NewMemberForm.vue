@@ -29,13 +29,15 @@
       :class="{ disabled: !availableParticipation }"
       type="submit"
       value="Send"
-      @click.prevent="handleNewMember()"
+      @click.prevent=";[handleNewMember(), handleNewSection()]"
     />
   </form>
   <aside class="error-msg" v-if="!availableParticipation">Participation available: {{ availableParticipation }}%</aside>
 </template>
 
 <script>
+// import { setInLocalStorage } from '../../utils/localStorage/index'
+
 export default {
   data() {
     return {
@@ -56,11 +58,12 @@ export default {
     },
   },
   methods: {
+    //* NEW MEMBERS
     handleNewMember() {
       if (this.availableParticipation && this.participation <= this.availableParticipation) {
         this.addNewMember()
         this.UPDATE_AVAILABLE_PARTICIPATION()
-        this.resetForm()
+        // setInLocalStorage(this.membersList, 'membersList')
       }
     },
     addNewMember() {
@@ -81,6 +84,22 @@ export default {
     },
     UPDATE_AVAILABLE_PARTICIPATION() {
       this.$store.dispatch('membersList/UPDATE_AVAILABLE_PARTICIPATION')
+    },
+
+    //* NEW MEMBERS
+    handleNewSection() {
+      let obj = {}
+      obj.label = `${this.name} ${this.lastName}`
+      obj.value = Number(this.participation)
+      obj.color = this.randomColor()
+      this.SET_NEW_SECTION(obj)
+      this.resetForm()
+    },
+    randomColor() {
+      return '#' + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6)
+    },
+    SET_NEW_SECTION(section) {
+      this.$store.dispatch('chartData/SET_NEW_SECTION', section)
     },
   },
 }

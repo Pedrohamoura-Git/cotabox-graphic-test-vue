@@ -29,4 +29,4 @@ export default {
   },
 }
 </script>
-<style lang="scss" src="./_membersTable.scss" scoped />
+<style lang="scss" src="./_tableData.scss" scoped />
