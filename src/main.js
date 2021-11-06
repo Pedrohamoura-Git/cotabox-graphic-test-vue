@@ -1,7 +1,12 @@
 /** @format */
 
-import { createApp } from "vue";
-import App from "./App.vue";
-import store from "./store/store";
+import { createApp } from 'vue'
 
-createApp(App).use(store).mount("#app");
+// Modules & Components
+import App from './App.vue'
+import store from './store/store'
+
+// Dependencies
+import VueApexCharts from 'vue3-apexcharts'
+
+createApp(App).use(store).use(VueApexCharts).mount('#app')
