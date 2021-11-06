@@ -14,7 +14,6 @@
     justify-content: center;
     height: 120px;
     margin: 0 auto 50px;
-    // margin-bottom: 50px;
   }
 }
 
@@ -30,4 +29,9 @@
 .btn--send {
   height: 40px;
   margin: 5px;
+}
+
+.disabled {
+  opacity: 85%;
+  pointer-events: none;
 }

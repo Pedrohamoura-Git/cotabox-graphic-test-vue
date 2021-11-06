@@ -2,6 +2,7 @@
     <form class="new-member-form" action="#">
         <input
             class="first-name-input"
+            :class="{ disabled: !availableParticipation }"
             type="text"
             placeholder="First Name"
             required
@@ -9,6 +10,7 @@
         />
         <input
             class="last-name-input"
+            :class="{ disabled: !availableParticipation }"
             type="text"
             placeholder="Last Name"
             required
@@ -16,6 +18,7 @@
         />
         <input
             class="participation-input"
+            :class="{ disabled: !availableParticipation }"
             type="text"
             placeholder="Participation"
             required
@@ -23,11 +26,15 @@
         />
         <input
             class="btn btn--send"
+            :class="{ disabled: !availableParticipation }"
             type="submit"
             value="Send"
             @click.prevent="handleNewMember()"
         />
     </form>
+    <aside class="error-msg" v-if="!availableParticipation">
+        Participation available: {{ availableParticipation }}%
+    </aside>
 </template>
 
 <script>
@@ -39,31 +46,27 @@ export default {
             participation: null,
         }
     },
+    mounted() {
+        this.UPDATE_AVAILABLE_PARTICIPATION()
+    },
     computed: {
         membersList() {
             return this.$store.state.membersList.membersList
         },
+        availableParticipation() {
+            return this.$store.state.membersList.availableParticipation
+        },
     },
     methods: {
         handleNewMember() {
-            const availableShare = this.getAvailableShare()
-            console.log(
-                'NewMemberInput - handleNewMember - availableShare',
-                availableShare
-            )
-            if (availableShare && this.participation <= availableShare) {
+            if (
+                this.availableParticipation &&
+                this.participation <= this.availableParticipation
+            ) {
                 this.addNewMember()
+                this.UPDATE_AVAILABLE_PARTICIPATION()
+                this.resetForm()
             }
-        },
-        getAvailableShare() {
-            const membersShares = this.membersList.reduce(
-                (acc, { participation }) => {
-                    return acc + participation
-                },
-                0
-            )
-            const availableShare = 100 - membersShares
-            return availableShare
         },
         addNewMember() {
             let member = {}
@@ -72,8 +75,17 @@ export default {
             member.participation = Number(this.participation)
             this.SET_NEW_MEMBER(member)
         },
+        resetForm() {
+            document.querySelector('.new-member-form').reset()
+            this.name = ''
+            this.lastName = ''
+            this.participation = ''
+        },
         SET_NEW_MEMBER(member) {
             this.$store.dispatch('membersList/SET_NEW_MEMBER', member)
+        },
+        UPDATE_AVAILABLE_PARTICIPATION() {
+            this.$store.dispatch('membersList/UPDATE_AVAILABLE_PARTICIPATION')
         },
     },
 }
