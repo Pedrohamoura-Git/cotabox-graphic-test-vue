@@ -61,7 +61,7 @@ Your users should be able to:
 - - Sass Mixins
 - Vue.JS
 - - VueX
-- - Vue Router
+<!-- - - Vue Router -->
 - Mobile-first workflow
 
 ### What I learned
