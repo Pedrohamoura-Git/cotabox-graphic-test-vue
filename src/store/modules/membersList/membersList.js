@@ -1,4 +1,5 @@
 /** @format */
+import { setInLocalStorage } from '../../../utils/localStorage/index'
 
 const membersList = {
   namespaced: true,
@@ -17,14 +18,24 @@ const membersList = {
     SET_NEW_MEMBER(state, payload) {
       state.membersList.push(payload)
     },
+    SET_ALL_MEMBERS(state, payload) {
+      state.membersList = payload
+    },
     SET_AVAILABLE_PARTICIPATION(state, payload) {
       state.availableParticipation = payload
     },
   },
   actions: {
-    SET_NEW_MEMBER({ commit, state }, member) {
+    ADD_NEW_MEMBER({ commit, dispatch }, member) {
       commit('SET_NEW_MEMBER', member)
-      console.log('actions - set new member - membersList', state.membersList)
+      dispatch('SET_MEMBERS_LOCAL_STORAGE')
+    },
+    ADD_ALL_MEMBERS({ commit, dispatch }, members) {
+      commit('SET_ALL_MEMBERS', members)
+      dispatch('SET_MEMBERS_LOCAL_STORAGE')
+    },
+    SET_MEMBERS_LOCAL_STORAGE({ state }) {
+      setInLocalStorage(state.membersList, 'membersList')
     },
     SET_AVAILABLE_PARTICIPATION({ commit }, value) {
       commit('SET_AVAILABLE_PARTICIPATION', value)

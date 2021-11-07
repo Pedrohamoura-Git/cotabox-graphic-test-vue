@@ -36,8 +36,6 @@
 </template>
 
 <script>
-// import { setInLocalStorage } from '../../utils/localStorage/index'
-
 export default {
   data() {
     return {
@@ -58,12 +56,12 @@ export default {
     },
   },
   methods: {
-    //* NEW MEMBERS
+    //***************************** NEW MEMBERS ***************************** */
+
     handleNewMember() {
       if (this.availableParticipation && this.participation <= this.availableParticipation) {
         this.addNewMember()
         this.UPDATE_AVAILABLE_PARTICIPATION()
-        // setInLocalStorage(this.membersList, 'membersList')
       }
     },
     addNewMember() {
@@ -71,35 +69,34 @@ export default {
       member.name = this.name
       member.lastName = this.lastName
       member.participation = Number(this.participation)
-      this.SET_NEW_MEMBER(member)
+      this.ADD_NEW_MEMBER(member)
+    },
+    ADD_NEW_MEMBER(member) {
+      this.$store.dispatch('membersList/ADD_NEW_MEMBER', member)
+    },
+    UPDATE_AVAILABLE_PARTICIPATION() {
+      this.$store.dispatch('membersList/UPDATE_AVAILABLE_PARTICIPATION')
+    },
+    //***************************** NEW SECTIONS ***************************** */
+    handleNewSection() {
+      let obj = {}
+      obj.label = `${this.name} ${this.lastName}`
+      obj.value = Number(this.participation)
+      obj.color = this.randomColor()
+      this.ADD_NEW_SECTION(obj)
+      this.resetForm()
+    },
+    randomColor() {
+      return '#' + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6)
+    },
+    ADD_NEW_SECTION(section) {
+      this.$store.dispatch('chartData/ADD_NEW_SECTION', section)
     },
     resetForm() {
       document.querySelector('.new-member-form').reset()
       this.name = ''
       this.lastName = ''
       this.participation = ''
-    },
-    SET_NEW_MEMBER(member) {
-      this.$store.dispatch('membersList/SET_NEW_MEMBER', member)
-    },
-    UPDATE_AVAILABLE_PARTICIPATION() {
-      this.$store.dispatch('membersList/UPDATE_AVAILABLE_PARTICIPATION')
-    },
-
-    //* NEW MEMBERS
-    handleNewSection() {
-      let obj = {}
-      obj.label = `${this.name} ${this.lastName}`
-      obj.value = Number(this.participation)
-      obj.color = this.randomColor()
-      this.SET_NEW_SECTION(obj)
-      this.resetForm()
-    },
-    randomColor() {
-      return '#' + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6)
-    },
-    SET_NEW_SECTION(section) {
-      this.$store.dispatch('chartData/SET_NEW_SECTION', section)
     },
   },
 }

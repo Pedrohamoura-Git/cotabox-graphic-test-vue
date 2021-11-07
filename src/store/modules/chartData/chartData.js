@@ -1,27 +1,34 @@
 /** @format */
 
-//* CRIAR UM ARRAY DE OBJETOS COM TODOS OS VALORES NECESSÁRIOS PARA O CHART
+import { setInLocalStorage } from '../../../utils/localStorage/index'
 
 const sections = {
   namespaced: true,
   state: {
     sections: [],
-    // sections: [
-    //     { label: 'Red section', value: 25, color: 'red' },
-    //     { label: 'Green section', value: 25, color: 'green' },
-    //     { label: 'Blue section', value: 25, color: 'blue' }
-    //   ]
   },
   mutations: {
     SET_NEW_SECTION(state, payload) {
-      console.log('SET_NEW_SECTION', payload)
       state.sections.push(payload)
-      console.log('SET_NEW_SECTION - state.sections', state.sections)
+    },
+    SET_ALL_SECTIONS(state, payload) {
+      // console.log('SET_ALL_SECTIONS - payload -> ', payload)
+      state.sections = payload
     },
   },
   actions: {
-    SET_NEW_SECTION({ commit }, section) {
+    ADD_NEW_SECTION({ commit, dispatch }, section) {
       commit('SET_NEW_SECTION', section)
+      // console.log('ADD_NEW_SECTION - section -> ', section)
+      dispatch('SET_SECTIONS_LOCAL_STORAGE')
+    },
+    ADD_ALL_SECTIONS({ commit, dispatch }, sections) {
+      commit('SET_ALL_SECTIONS', sections)
+      dispatch('SET_SECTIONS_LOCAL_STORAGE')
+    },
+    SET_SECTIONS_LOCAL_STORAGE({ state }) {
+      // console.log('SET_SECTIONS_LOCAL_STORAGE - section -> ', state.sections)
+      setInLocalStorage(state.sections, 'sections')
     },
   },
 }
