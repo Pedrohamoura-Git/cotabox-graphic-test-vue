@@ -7,7 +7,12 @@
       <th class="table-head__txt table-head__txt--participation">Participation</th>
     </thead>
     <tbody class="table-body">
-      <tr class="table-row" v-for="(member, index) in membersList" :key="index">
+      <tr
+        class="table-row"
+        data-test="members-list"
+        v-for="(member, index) in membersList"
+        :key="index"
+      >
         <td class="table-data table-data--cont">{{ index + 1 }}</td>
         <td class="table-data table-data--name">{{ member.name }}</td>
         <td class="table-data table-data--last-name">

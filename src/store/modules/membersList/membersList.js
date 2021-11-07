@@ -12,7 +12,7 @@ const membersList = {
     //   { name: 'Eliza', lastName: 'Souza', participation: 20 },
     //   { name: 'Anderson', lastName: 'Santos', participation: 40 },
     // ],
-    availableParticipation: 0,
+    availableParticipation: 100,
   },
   mutations: {
     SET_NEW_MEMBER(state, payload) {

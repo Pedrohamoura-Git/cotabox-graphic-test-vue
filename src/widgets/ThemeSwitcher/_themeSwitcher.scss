@@ -1,0 +1,51 @@
+@import '../../assets/scss/index.scss';
+
+.switch-checkbox {
+  display: none;
+}
+
+.switch-label {
+  align-items: center;
+  // background: var(--text-primary-color);
+  border-radius: 10px;
+  border: 1px solid var(--accent-color);  
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  font-size: 18px;
+  height: 10px;
+  width: 50px; 
+  padding: 10px;
+  position: relative;
+  transition: background $transition-kinda-quick ease;
+  z-index: 1;
+} 
+
+.sun {
+  position: absolute;
+  top: -2px;
+  left: -1px;
+  transform: scale(.9);
+}
+.moon {
+  position: absolute;
+  top: -2px;
+  right: -1px;
+  transform: scale(.75);
+}
+
+.switch-toggle {
+  background-color: var(--bg-color-primary);
+  border-radius: 50%;
+  top: 0px;
+  left: 28px;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+
+  transform: translateX(0);
+  transition: transform $transition-quick ease, background-color  $transition-kinda-quick ease;
+}
+.switch-toggle-checked {
+  transform: translateX(-28px) !important;
+}

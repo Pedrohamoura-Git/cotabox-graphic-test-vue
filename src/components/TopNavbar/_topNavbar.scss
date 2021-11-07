@@ -1,0 +1,11 @@
+@import '../../assets/scss/index.scss';
+
+.top-navbar {
+  background-color: $bg-color-form;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 120px;
+  margin: 0 auto 50px;
+  padding: 20px 0 30px;
+}

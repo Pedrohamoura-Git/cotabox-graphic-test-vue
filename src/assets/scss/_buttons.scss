@@ -14,16 +14,16 @@
   }
 
   &--send {
-    background-color: $bg-color-form;
+    background-color: transparent;
     border: 2px solid;
     border-radius: $border-radius-very-small;
-    color: $txt-color-light;
+    color: $txt-color-btn-send;
     font-weight: 600;
     text-transform: uppercase;
     width: 100px;
 
     &:hover {
-      background-color: $txt-color-light;
+      background-color: $txt-color-btn-send;
       color: $bg-color-form;
       text-decoration: underline;
     }

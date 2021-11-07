@@ -1,20 +1,14 @@
 @import '../../assets/scss/index.scss';
 
 .new-member-form {
-  background-color: $bg-color-form;
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    // height: 150px;
-    margin-bottom: 30px;
-    padding: 20px 0 30px;
+  position: relative;
 
   @include tablet {
     display: flex;
     align-items: center;
     justify-content: center;
-    height: 120px;
-    margin: 0 auto 50px;
-    // margin-bottom: 50px;
   }
 }
 
@@ -35,4 +29,13 @@
 .disabled {
   opacity: 85%;
   pointer-events: none;
-} 
+}
+
+.error-msg {
+  background-color: $bg-color-error;
+  border-radius: $border-radius-small;
+  padding: 10px;
+  position: absolute;
+  top: 140px;
+  width: min(70%, 500px);
+}

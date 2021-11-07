@@ -1,8 +1,9 @@
 <template>
-  <form class="new-member-form" action="#">
+  <form class="new-member-form" data-test="new-member-form" action="#">
     <input
       class="first-name-input"
       :class="{ disabled: !availableParticipation }"
+      data-test="first-name-input"
       type="text"
       placeholder="First Name"
       required
@@ -11,6 +12,7 @@
     <input
       class="last-name-input"
       :class="{ disabled: !availableParticipation }"
+      data-test="last-name-input"
       type="text"
       placeholder="Last Name"
       required
@@ -19,6 +21,7 @@
     <input
       class="participation-input"
       :class="{ disabled: !availableParticipation }"
+      data-test="participation-input"
       type="text"
       placeholder="Participation"
       required
@@ -27,12 +30,22 @@
     <input
       class="btn btn--send"
       :class="{ disabled: !availableParticipation }"
+      data-test="submit-btn"
       type="submit"
       value="Send"
-      @click.prevent=";[handleNewMember(), handleNewSection()]"
+      @click.prevent="handleSubmition()"
     />
   </form>
-  <aside class="error-msg" v-if="!availableParticipation">Participation available: {{ availableParticipation }}%</aside>
+  <transition
+    enter-active-class="slide-in-right"
+    leave-active-class="slide-out-right"
+    mode="out-in"
+    appear
+  >
+    <aside class="error-msg" v-if="inputError">
+      Something wrong. Check the inputs and try again.
+    </aside>
+  </transition>
 </template>
 
 <script>
@@ -42,6 +55,7 @@ export default {
       name: '',
       lastName: '',
       participation: null,
+      inputError: false,
     }
   },
   mounted() {
@@ -58,10 +72,13 @@ export default {
   methods: {
     //***************************** NEW MEMBERS ***************************** */
 
-    handleNewMember() {
-      if (this.availableParticipation && this.participation <= this.availableParticipation) {
+    handleSubmition() {
+      if (this.participation != null && this.participation <= this.availableParticipation) {
         this.addNewMember()
         this.UPDATE_AVAILABLE_PARTICIPATION()
+        this.addNewSection()
+      } else {
+        this.handleInputError()
       }
     },
     addNewMember() {
@@ -78,7 +95,7 @@ export default {
       this.$store.dispatch('membersList/UPDATE_AVAILABLE_PARTICIPATION')
     },
     //***************************** NEW SECTIONS ***************************** */
-    handleNewSection() {
+    addNewSection() {
       let obj = {}
       obj.label = `${this.name} ${this.lastName}`
       obj.value = Number(this.participation)
@@ -97,6 +114,12 @@ export default {
       this.name = ''
       this.lastName = ''
       this.participation = ''
+    },
+    handleInputError() {
+      this.inputError = true
+      setTimeout(() => {
+        this.inputError = false
+      }, 3500)
     },
   },
 }

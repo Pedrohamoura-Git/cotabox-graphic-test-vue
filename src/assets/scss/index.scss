@@ -1,3 +1,5 @@
+@import '_themes.scss';
+@import '_animations.scss';
 @import '_base.scss';
 @import '_buttons.scss';
 
@@ -11,13 +13,12 @@
 }
 
 body {
-  color: $txt-color-light;
+  background-color: $bg-color-body;
 }
 
 #app {
-  color: #2c3e50;
+  color: $txt-color;
   font-family: Avenir, Helvetica, Arial, sans-serif;
-  // margin-top: 60px;
   min-height: 100vh;
   text-align: center;
  

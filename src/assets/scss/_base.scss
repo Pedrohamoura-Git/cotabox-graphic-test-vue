@@ -1,8 +1,14 @@
-$bg-color-form: #00B8E2;
+$bg-color-body: var(--bg-color-primary);
+$bg-color-form: var(--bg-color-form);
+$bg-color-btn-send: var(--bg-color-btn-send);
 $border-radius-very-small: 3px;
 $border-radius-small: 7px;
+$bg-color-error: var(--bg-color-error);
+$transition-normal: 1s;
+$transition-kinda-quick: .5s;
 $transition-quick: .3s;
-$txt-color-light: #ffffff;
+$txt-color: var(--txt-primary-color);
+$txt-color-btn-send: var(--txt-color-btn-send);
 $txt-color-table: #7b7979;
 
 

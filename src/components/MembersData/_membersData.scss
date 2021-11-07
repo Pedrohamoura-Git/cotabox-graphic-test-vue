@@ -7,7 +7,17 @@
   justify-content: center;
   gap: 10px;
 
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
   &__about {
     margin-bottom: 40px;
+
+    @include tablet {
+      grid-column: 1 / span all;
+      // margin: auto 100px;
+    }
   }
 }
