@@ -75,6 +75,7 @@ Your users should be able to:
 
 - <a href="https://apexcharts.com/docs/vue-charts/" alt="Apex Charts - Vue Charts" target="_blank">Apex Charts - Vue Charts</a>
 - <a href="https://next.vue-test-utils.vuejs.org/guide/essentials/a-crash-course.html#arrange-act-assert" alt="Vue Test Utils - A Crash Course" target="_blank">Vue Test Utils - A Crash Course</a>
+- <a href="https://v3.vuejs.org/guide/component-slots.html#render-scope" alt="Vue - Slots" target="_blank">Vue - Slots</a>
 ...
 
 ## Author
