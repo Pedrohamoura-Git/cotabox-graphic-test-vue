@@ -24,11 +24,6 @@ import ThemeSwitcher from '../../widgets/ThemeSwitcher/ThemeSwitcher.vue'
 
 export default {
   components: { NewMemberForm, MembersData, TopNavbar, ThemeSwitcher },
-  computed: {
-    userName() {
-      return this.$store.state.user.name
-    },
-  },
 }
 </script>
 

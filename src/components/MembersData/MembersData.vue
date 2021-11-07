@@ -1,27 +1,64 @@
 <template>
-  <section class="members-data">
-    <div class="members-data__about">
-      <h1 class="card-title">Data</h1>
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque, earum.</p>
-    </div>
-    <TableData />
-    <vc-donut
-      background="white"
-      foreground="lightgrey"
-      :size="200"
-      unit="px"
-      :thickness="40"
-      has-legend
-      legend-placement="right"
-      :sections="sections"
-      :total="100"
-      :start-angle="0"
-      :auto-adjust-text-size="true"
-    >
-      <h1 style="color: black">Total: <br />{{ 100 - availableParticipation }}%</h1>
-    </vc-donut>
-    <!-- <ChartData chartType="donut" width="300" :series="participationsList" /> -->
-  </section>
+  <transition
+    v-if="membersList.length == 0"
+    enter-active-class="fade-in"
+    leave-active-class="fade-out"
+    mode="out-in"
+    appear
+  >
+    <section class="add-data-msg">
+      <h1 class="cart-title">
+        Seems like it's gonna be a lonely night... T.T<br />
+        Insert some data so I can have some company.
+      </h1>
+    </section>
+  </transition>
+  <transition
+    v-else
+    enter-active-class="fade-in"
+    leave-active-class="fade-out"
+    mode="out-in"
+    appear
+  >
+    <section class="members-data">
+      <div class="members-data__about">
+        <h1 class="card-title">Data</h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Eaque, earum.</p>
+      </div>
+      <transition
+        enter-active-class="slide-in-left"
+        leave-active-class="slide-out-left"
+        mode="out-in"
+        appear
+      >
+        <TableData v-if="membersList.length != 0" />
+      </transition>
+      <transition
+        enter-active-class="scale-in-center"
+        leave-active-class="scale-out-center"
+        mode="out-in"
+        appear
+      >
+        <vc-donut
+          v-if="sections.length != 0"
+          background="white"
+          foreground="lightgrey"
+          :size="200"
+          unit="px"
+          :thickness="40"
+          has-legend
+          legend-placement="right"
+          :sections="sections"
+          :total="100"
+          :start-angle="0"
+          :auto-adjust-text-size="true"
+        >
+          <h1 style="color: black">Total: <br />{{ 100 - availableParticipation }}%</h1>
+        </vc-donut>
+      </transition>
+      <!-- <ChartData chartType="donut" width="300" :series="participationsList" /> -->
+    </section>
+  </transition>
 </template>
 <script>
 import TableData from '../TableData/TableData'
