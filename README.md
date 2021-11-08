@@ -22,6 +22,9 @@ Your users should be able to:
 
 - (V) View the optimal layout for each page depending on their device's screen size
 - (V) See hover states for all interactive elements throughout the site
+- (V) Add new members using the form
+- (V) remove members using the table's delete buttons
+- (V) See the cart reacting to the every change in the members list
 
 ### Screenshots
 
