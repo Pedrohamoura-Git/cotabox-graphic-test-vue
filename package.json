@@ -9,11 +9,9 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "apexcharts": "^3.29.0",
     "core-js": "^3.6.5",
     "vue": "^3.0.0",
     "vue-css-donut-chart": "^2.0.0",
-    "vue3-apexcharts": "^1.4.1",
     "vuex": "^4.0.0-0"
   },
   "devDependencies": {
