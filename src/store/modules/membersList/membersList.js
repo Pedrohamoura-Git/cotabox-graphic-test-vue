@@ -21,6 +21,9 @@ const membersList = {
     SET_ALL_MEMBERS(state, payload) {
       state.membersList = payload
     },
+    REMOVE_MEMBER(state, index) {
+      state.membersList.splice(index, 1)
+    },
     SET_AVAILABLE_PARTICIPATION(state, payload) {
       state.availableParticipation = payload
     },
@@ -32,6 +35,10 @@ const membersList = {
     },
     ADD_ALL_MEMBERS({ commit, dispatch }, members) {
       commit('SET_ALL_MEMBERS', members)
+      dispatch('SET_MEMBERS_LOCAL_STORAGE')
+    },
+    REMOVE_MEMBER({ commit, dispatch }, index) {
+      commit('REMOVE_MEMBER', index)
       dispatch('SET_MEMBERS_LOCAL_STORAGE')
     },
     SET_MEMBERS_LOCAL_STORAGE({ state }) {
