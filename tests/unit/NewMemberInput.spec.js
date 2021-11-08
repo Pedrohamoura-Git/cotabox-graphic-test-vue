@@ -44,35 +44,3 @@ test('Should add a member', () => {
   expect(wrapper.store.mutations.SET_NEW_MEMBER).toBeCalledTimes(1)
   // expect(spy).toBeCalledTimes(1)
 })
-
-// import Vuex from 'vuex'
-// import { shallowMount, createLocalVue } from '@/vue-test-utils'
-// import NewMemberForm from '../../src/components/NewMemberForm/NewMemberForm'
-
-// describe('NewMemberForm', () => {
-//   let localVue, store
-
-//   beforeEach(() => {
-//     localVue = createLocalVue()
-//     localVue.use(Vuex)
-//     store = new Vuex.Store({
-//       getters: {
-//         breadcrumbs() {
-//           return [
-//             { text: 'Home', path: '/' },
-//             { text: 'Users', path: '/users' },
-//             { text: 'Frank', path: '/users/frank', disabled: true },
-//           ]
-//         },
-//       },
-//     })
-//   })
-
-//   it('should pass items to v-breadcrumbs', () => {
-//     const wrapper = shallowMount(SBreadcrumbs, { localVue, store })
-//     expect(wrapper.find({ name: 'v-breadcrumbs' }).props().items[0]).toEqual({
-//       text: 'Home',
-//       path: '/',
-//     })
-//   })
-// })

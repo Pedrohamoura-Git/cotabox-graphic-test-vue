@@ -49,8 +49,4 @@ describe('store-chartData', () => {
     // expect(store.state.sections).toHaveLength(1)
     // expect(setInLocalStorage).toBeCalledTimes(1)
   })
-
-  //   test('Set all sections', () => {
-
-  // })
 })
