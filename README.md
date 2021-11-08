@@ -22,11 +22,6 @@ Your users should be able to:
 
 - (V) View the optimal layout for each page depending on their device's screen size
 - (V) See hover states for all interactive elements throughout the site
-...
-<!-- - (V) Add new item to the cart
-- (V) See the items in the cart even when the pages reloads
-- (V) Search a pokemon by name
-- (V) Change the item quant in the CartPage -->
 
 ### Screenshots
 
@@ -54,14 +49,12 @@ Your users should be able to:
 - CSS Animations
 - - CSS Transitions
 - - CSS Transform
-- - CSS Animate.css library 
-- - CSS CSS-animated delicious hamburgers library
+- - CSS Animista library 
 - Sass
 - - Sass Variables
 - - Sass Mixins
 - Vue.JS
 - - VueX
-<!-- - - Vue Router -->
 - Mobile-first workflow
 
 ### What I learned
