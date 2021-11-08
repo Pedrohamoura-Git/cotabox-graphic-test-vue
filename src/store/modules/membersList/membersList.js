@@ -32,6 +32,7 @@ const membersList = {
     },
     REMOVE_MEMBER({ commit, dispatch }, index) {
       commit('REMOVE_MEMBER', index)
+      dispatch('UPDATE_AVAILABLE_PARTICIPATION')
       dispatch('SET_MEMBERS_LOCAL_STORAGE')
     },
     SET_MEMBERS_LOCAL_STORAGE({ state }) {
