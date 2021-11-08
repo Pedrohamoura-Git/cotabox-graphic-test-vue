@@ -22,11 +22,6 @@ Your users should be able to:
 
 - (V) View the optimal layout for each page depending on their device's screen size
 - (V) See hover states for all interactive elements throughout the site
-...
-<!-- - (V) Add new item to the cart
-- (V) See the items in the cart even when the pages reloads
-- (V) Search a pokemon by name
-- (V) Change the item quant in the CartPage -->
 
 ### Screenshots
 
@@ -54,14 +49,12 @@ Your users should be able to:
 - CSS Animations
 - - CSS Transitions
 - - CSS Transform
-- - CSS Animate.css library 
-- - CSS CSS-animated delicious hamburgers library
+- - CSS Animista library 
 - Sass
 - - Sass Variables
 - - Sass Mixins
 - Vue.JS
 - - VueX
-<!-- - - Vue Router -->
 - Mobile-first workflow
 
 ### What I learned
@@ -77,6 +70,7 @@ Your users should be able to:
 - <a href="https://next.vue-test-utils.vuejs.org/guide/essentials/a-crash-course.html#arrange-act-assert" alt="Vue Test Utils - A Crash Course" target="_blank">Vue Test Utils - A Crash Course</a>
 - <a href="https://v3.vuejs.org/guide/component-slots.html#render-scope" alt="Vue - Slots" target="_blank">Vue - Slots</a>
 - <a href="https://dev.to/tqbit/create-your-own-dark-mode-toggle-component-with-vue-js-1284" alt="Vue - Dark Mode" target="_blank">Vue - Dark Mode</a>
+- <a href="https://animista.net/play/basic" alt="Animista" target="_blank">Animista</a>
 
 ## Author
 <em>Pedro Henrique Alves Moura</em>,
