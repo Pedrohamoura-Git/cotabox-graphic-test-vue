@@ -31,10 +31,10 @@ Your users should be able to:
 
 
 <span>
-  <img src="/public/screenshots/poke-shop-desktop.png" width="640px" style="display: inline">
+  <img src="/public/screenshots/members-participations-desktop.png" width="640px" style="display: inline">
 </span>
 <span>
-  <img src="/public/screenshots/poke-shop-mobile.png" height="640px" style="display: inline">
+  <img src="/public/screenshots/members-participations-mobile.png" height="640px" style="display: inline">
 </span>
 
 
