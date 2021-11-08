@@ -1,4 +1,4 @@
-# Frontend Personal Project - Cotabox-test
+# Front-end test Project - Cotabox-test
 
 <!-- - Live Site URL: - <a href="https://" target="_blank" alt="">Poke Shop</a> -->
 - Live Site URL: - <a href="#" target="_blank" alt=""></a>
