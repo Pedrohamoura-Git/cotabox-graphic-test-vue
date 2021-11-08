@@ -5,13 +5,6 @@ const membersList = {
   namespaced: true,
   state: {
     membersList: [],
-    // membersList: [
-    //   { name: 'Carlos', lastName: 'Moura', participation: 5 },
-    //   // { name: 'Fernanda', lastName: 'Oliveira', participation: 15 },
-    //   { name: 'Hugo', lastName: 'Silva', participation: 20 },
-    //   { name: 'Eliza', lastName: 'Souza', participation: 20 },
-    //   { name: 'Anderson', lastName: 'Santos', participation: 40 },
-    // ],
     availableParticipation: 100,
   },
   mutations: {

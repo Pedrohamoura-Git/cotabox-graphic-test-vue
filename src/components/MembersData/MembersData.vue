@@ -56,21 +56,17 @@
           <h1 style="color: black">Total: <br />{{ 100 - availableParticipation }}%</h1>
         </vc-donut>
       </transition>
-      <!-- <ChartData chartType="donut" width="300" :series="participationsList" /> -->
     </section>
   </transition>
 </template>
 <script>
 import TableData from '../TableData/TableData'
 
-// import VcDonut from '../../widgets/VcDonut/VcDonut.vue'
 import { isLocalStorageEmpty, getInLocalStorage } from '../../utils/localStorage/index'
-// import ChartData from '../../widgets/ChartData/ChartData.vue'
 
 export default {
   components: {
     TableData,
-    // ChartData,
   },
   mounted() {
     this.handleItemsInLocalStorage()
