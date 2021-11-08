@@ -6,15 +6,15 @@
   align-items: center;
   justify-content: center;
   position: relative;
-  // gap: 0;
+
   bottom: 0;
-  // height: 400px;
-  width: max-content;
+
 
   @include tablet {
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-wrap: wrap;
   }
 }
 
