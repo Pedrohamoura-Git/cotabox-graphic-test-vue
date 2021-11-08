@@ -2,6 +2,16 @@
 
 <!-- - Live Site URL: - <a href="https://" target="_blank" alt="">Poke Shop</a> -->
 - Live Site URL: - <a href="#" target="_blank" alt=""></a>
+
+## How to run
+- In the project folder, you can run:
+
+-  ```npm i ```  - **Will install all dependencies needed to run the project.**
+
+-  ```npm run dev``` - **Runs the app in the development mode.**
+-  Open <a href="http://localhost:8080" target="_blank" alt="">http://localhost:8080</a> to view it in the browser.
+
+_The page will reload if you edit it_.
 ## Table of contents
 
 - [Overview](#overview)
