@@ -2,8 +2,14 @@
 
 .new-member-form {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  align-items: center;
+  justify-content: center;
   position: relative;
+  // gap: 0;
+  bottom: 0;
+  // height: 400px;
+  width: max-content;
 
   @include tablet {
     display: flex;
@@ -12,13 +18,15 @@
   }
 }
 
-.first-name-input, .last-name-input, .participation-input {
+.first-name-input,
+.last-name-input,
+.participation-input {
   border: 0px;
   border-radius: 5px;
   height: 40px;
+  max-width: 350px;
   margin: 5px;
   padding: 10px;
-  max-width: 250px;
 }
 
 .btn--send {

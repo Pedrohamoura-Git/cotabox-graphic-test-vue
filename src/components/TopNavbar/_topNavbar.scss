@@ -5,7 +5,15 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 120px;
   margin: 0 auto 50px;
   padding: 20px 0 30px;
+
+  // theme switcher
+  position: relative;
+
+  @include tablet {
+    gap: 20px;
+    height: 120px;
+    align-items: center;
+  }
 }

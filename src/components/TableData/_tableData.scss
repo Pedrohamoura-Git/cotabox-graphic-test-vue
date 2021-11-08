@@ -1,11 +1,12 @@
 @import '../../assets/scss/index.scss';
 
 .table {
+  // align-self: flex-start;
   border: 1px solid;
-  color: $txt-color-table;
-  font-size: 0.9rem;
-  width: min(95%, 500px);
-  margin: 0 auto;
+  color: $txt-color;
+  font-size: 11px;
+  width: min(95%, 380px);
+  margin: 0 auto 50px;
   padding: 10px;
   text-transform: capitalize;
 
@@ -18,6 +19,7 @@
   }
 
   &-head__txt {
+    // font-size: 12px;
     padding: 5px;
     text-align: left;
 

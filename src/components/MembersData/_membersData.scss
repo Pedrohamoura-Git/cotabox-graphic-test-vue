@@ -10,10 +10,16 @@
   align-items: center;
   justify-content: center;
   gap: 10px;
+  margin: 0 auto;
 
   @include tablet {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, .8fr);
+    gap: 30px;
+  }
+
+  @include desktop {
+    width: 70%;
   }
 
   &__about {
