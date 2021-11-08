@@ -25,6 +25,7 @@ Your users should be able to:
 - (V) Add new members using the form
 - (V) remove members using the table's delete buttons
 - (V) See the cart reacting to the every change in the members list
+- (V) Toggle dark and light mode
 
 ### Screenshots
 
