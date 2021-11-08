@@ -8,7 +8,7 @@
 
 -  ```npm i ```  - **Will install all dependencies needed to run the project.**
 
--  ```npm run dev``` - **Runs the app in the development mode.**
+-  ```npm run serve``` - **Runs the app in the development mode.**
 -  Open <a href="http://localhost:8080" target="_blank" alt="">http://localhost:8080</a> to view it in the browser.
 
 _The page will reload if you edit it_.
