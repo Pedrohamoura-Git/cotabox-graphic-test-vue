@@ -9,7 +9,7 @@
     <section class="add-data-msg">
       <h1 class="cart-title">
         Seems like it's gonna be a lonely night... T.T<br />
-        Insert some data so I can have some company.
+        Add a new member so I can have some company.
       </h1>
     </section>
   </transition>
@@ -87,7 +87,6 @@ export default {
     },
     participationsList() {
       const participationsList = this.membersList.map((member) => member.participation)
-      console.log('PL', participationsList)
       return participationsList
     },
   },
@@ -99,7 +98,6 @@ export default {
     checkMembersList() {
       if (isLocalStorageEmpty('membersList') == false && this.membersList.length == 0) {
         const membersList = getInLocalStorage('membersList')
-        console.log('MembersData - checkMembersList - membersList', membersList)
         this.ADD_ALL_MEMBERS(membersList)
         this.UPDATE_AVAILABLE_PARTICIPATION()
       }
@@ -113,7 +111,6 @@ export default {
     checkSections() {
       if (isLocalStorageEmpty('sections') == false && this.sections.length == 0) {
         const sections = getInLocalStorage('sections')
-        console.log('MembersData - checkSections - sections', sections)
         this.ADD_ALL_SECTIONS(sections)
       }
     },

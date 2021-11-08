@@ -1,50 +1,55 @@
 <template>
-  <!-- <input type="checkbox" id="switch" name="theme" />
-  <label for="switch" @click="switchTheme()">Toggle</label> -->
-  <input @change="toggleTheme" id="checkbox" type="checkbox" class="switch-checkbox" />
+  <input @change="toggleTheme()" id="checkbox" type="checkbox" class="switch-checkbox" />
   <label for="checkbox" class="switch-label">
     <div class="icons">
       <span class="icons__moon">🌙</span>
       <span class="icons__sun">☀️</span>
       <span
         class="icons__switch-toggle"
-        :class="{ 'icons__switch-toggle-checked': userTheme === 'dark-theme' }"
+        :class="{ 'icons__switch-toggle-checked': activeTheme === 'dark-theme' }"
       ></span>
     </div>
   </label>
 </template>
 <script>
+import { getInLocalStorage } from '@/utils/localStorage'
+
 export default {
-  mounted() {
-    const initUserTheme = this.getMediaPreference()
-    this.setTheme(initUserTheme)
-  },
   data() {
     return {
       userTheme: 'light-theme',
     }
   },
+  mounted() {
+    this.handleLocalTheme()
+  },
+  computed: {
+    activeTheme() {
+      return this.$store.state.themeSwitcher.activeTheme
+    },
+  },
+  watch: {
+    activeTheme: {
+      handler() {
+        document.documentElement.className = this.activeTheme
+      },
+      deep: true,
+    },
+  },
   methods: {
-    setTheme(theme) {
-      localStorage.setItem('user-theme', theme)
-      this.userTheme = theme
-      document.documentElement.className = theme
+    handleLocalTheme() {
+      const localTheme = getInLocalStorage('activeTheme')
+      if (localTheme != null) this.SET_THEME(localTheme)
     },
     toggleTheme() {
-      const activeTheme = localStorage.getItem('user-theme')
-      if (activeTheme === 'light-theme') {
-        this.setTheme('dark-theme')
+      if (this.activeTheme == 'light-theme') {
+        this.SET_THEME('dark-theme')
       } else {
-        this.setTheme('light-theme')
+        this.SET_THEME('light-theme')
       }
     },
-    getMediaPreference() {
-      const hasDarkPreference = window.matchMedia('(prefers-color-scheme: dark)').matches
-      if (hasDarkPreference) {
-        return 'dark-theme'
-      } else {
-        return 'light-theme'
-      }
+    SET_THEME(theme) {
+      this.$store.dispatch('themeSwitcher/SET_THEME', theme)
     },
   },
 }

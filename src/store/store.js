@@ -3,12 +3,12 @@
 import { createStore } from 'vuex'
 import membersList from './modules/membersList/membersList'
 import chartData from './modules/chartData/chartData'
-import themeSwicher from './modules/themeSwicher/themeSwicher'
+import themeSwitcher from './modules/themeSwitcher/themeSwitcher'
 const store = createStore({
   modules: {
     membersList,
     chartData,
-    themeSwicher,
+    themeSwitcher,
   },
 })
 

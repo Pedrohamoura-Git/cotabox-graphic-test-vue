@@ -35,7 +35,7 @@ const membersList = {
       dispatch('SET_MEMBERS_LOCAL_STORAGE')
     },
     SET_MEMBERS_LOCAL_STORAGE({ state }) {
-      setInLocalStorage(state.membersList, 'membersList')
+      setInLocalStorage('membersList', state.membersList)
     },
     SET_AVAILABLE_PARTICIPATION({ commit }, value) {
       commit('SET_AVAILABLE_PARTICIPATION', value)

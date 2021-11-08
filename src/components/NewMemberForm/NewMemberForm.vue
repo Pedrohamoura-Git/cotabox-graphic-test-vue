@@ -49,6 +49,8 @@
 </template>
 
 <script>
+import { getRandomColor } from '@/utils/charts/chartUtils'
+
 export default {
   data() {
     return {
@@ -99,12 +101,9 @@ export default {
       let obj = {}
       obj.label = `${this.name} ${this.lastName}`
       obj.value = Number(this.participation)
-      obj.color = this.randomColor()
+      obj.color = getRandomColor()
       this.ADD_NEW_SECTION(obj)
       this.resetForm()
-    },
-    randomColor() {
-      return '#' + (0x1000000 + Math.random() * 0xffffff).toString(16).substr(1, 6)
     },
     ADD_NEW_SECTION(section) {
       this.$store.dispatch('chartData/ADD_NEW_SECTION', section)
@@ -113,7 +112,7 @@ export default {
       document.querySelector('.new-member-form').reset()
       this.name = ''
       this.lastName = ''
-      this.participation = ''
+      this.participation = null
     },
     handleInputError() {
       this.inputError = true

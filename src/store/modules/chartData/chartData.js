@@ -25,7 +25,7 @@ const sections = {
       dispatch('SET_SECTIONS_LOCAL_STORAGE')
     },
     SET_SECTIONS_LOCAL_STORAGE({ state }) {
-      setInLocalStorage(state.sections, 'sections')
+      setInLocalStorage('sections', state.sections)
     },
   },
 }
